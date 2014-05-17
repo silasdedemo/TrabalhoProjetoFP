@@ -1,3 +1,4 @@
+
 from django.conf.urls import patterns, include, url
 
 from django.contrib import admin
@@ -8,4 +9,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^pessoas/', include('pessoas.urlsPessoas')),
     url(r'^caixas/', include('caixas.urlsCaixas')),
+    url(r'^fluxo/', include('fluxo.urlsFluxo')),
 )

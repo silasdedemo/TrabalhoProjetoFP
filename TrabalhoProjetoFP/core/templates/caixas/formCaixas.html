@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block titulo %}Form Contas{% endblock titulo %}
+{% block titulo %}Formulário da Pessoa{% endblock titulo %}
 
 {% block conteudo %}
 <script type="text/javascript">
@@ -19,7 +19,7 @@
         <label for="pessoa_id" class="col-sm-2 control-label">Pessoa</label>
         <div class="col-sm-10">
             <select class="form-control" name="pessoa_id" id="pessoa_id" >
-            <option value="0">SELECIONE</option>
+            <option value="0">SELECIONE UMA PESSOA</option>
             {% for pessoa in pessoas %}
                 {% if pessoa.id == conta.pessoa.id %}
                 <option value="{{ pessoa.id }}" selected>{{ pessoa.nome }} - {{ pessoa.email }}</option>
@@ -35,7 +35,7 @@
         <label for="tipo" class="col-sm-2 control-label">Tipo</label>
         <div class="col-sm-10">
             <select class="form-control" name="tipo" id="pessoa_id" >
-                <option value="E">SELECIONE</option>
+                <option value="E">SELECIONE CAIXA ENTRADA OU SAÍDA</option>
                 <option {% if conta.tipo == 'E' %} selected="selected" {% endif %} value="E">ENTRADA</option>
                 <option {% if conta.tipo == 'S' %} selected="selected" {% endif %} value="S">SAÍDA</option>
             </select>
@@ -57,7 +57,7 @@
 
 
             <div class="col-sm-5">
-                <div id="datetimepicker" class="input-append date" class="form-control">
+                <div class="datetimepicker" class="input-append date" class="form-control">
                     <input type="text" name="data" value="{{ conta.data }}" >
                     <span class="add-on">
                         <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>

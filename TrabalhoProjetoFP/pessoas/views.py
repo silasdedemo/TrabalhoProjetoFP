@@ -1,8 +1,12 @@
 # This Python file uses the following encoding: utf-8
-
+# ANOTAÇÃO PARA USAR CARACTERES ESPECIAIS AQUI. (MESMO PARA ANOTAÇÕES.)
+""" 
+@edsonlb
+https://www.facebook.com/groups/pythonmania/
+"""
 
 from django.shortcuts import render, HttpResponseRedirect
-from django.db.models import Q 
+from django.db.models import Q #Queries complexas
 from pessoas.models import Pessoa
 
 def index(request):
@@ -11,7 +15,10 @@ def index(request):
 def pessoaListar(request):
     pessoas = Pessoa.objects.all()[0:10]
 
-    
+    # TESTE LOCAL PARA VERIFICAR SE A TABELA ESTA LISTANDO
+    #pessoas = []
+    #pessoas.append(Pessoa(nome='NOME1', email='MAIL', telefone='TELEFONE'))
+    #pessoas.append(Pessoa(nome='NOME2'))
 
     return render(request, 'pessoas/listaPessoas.html', {'pessoas': pessoas})
 
